@@ -88,7 +88,7 @@ const togglePasswordVisibility = () => {
           :disabled="isSubmitting"
         />
         <AmIcon
-          class="absolute text-primary-500 p-2 opacity-50"
+          class="absolute text-primary-500 p-4 opacity-50"
           :class="{
             'cursor-pointer hover:opacity-100 transition': !isSubmitting,
             'cursor-not-allowed': isSubmitting
