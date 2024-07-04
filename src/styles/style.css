@@ -1,0 +1,37 @@
+@layer tailwind-base, primevue, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+:root {
+  --primary-50: 247 239 254;
+  --primary-100: 239 225 254;
+  --primary-200: 221 195 254;
+  --primary-300: 201 165 253;
+  --primary-400: 183 143 251;
+  --primary-500: 155 106 250;
+  --primary-600: 119 77 215;
+  --primary-700: 87 53 179;
+  --primary-800: 60 33 144;
+  --primary-900: 40 20 119;
+  --primary-950: 17 8 27;
+
+  --surface-0: 255 255 255;
+  --surface-50: 249 250 251;
+  --surface-100: 243 244 246;
+  --surface-200: 229 231 235;
+  --surface-300: 209 213 219;
+  --surface-400: 156 163 175;
+  --surface-500: 107 114 128;
+  --surface-600: 75 85 99;
+  --surface-700: 55 65 81;
+  --surface-800: 31 41 55;
+  --surface-900: 17 24 39;
+  --surface-950: 8 8 8;
+}
