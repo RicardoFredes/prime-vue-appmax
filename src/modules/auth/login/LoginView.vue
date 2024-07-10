@@ -4,7 +4,7 @@ import LoginForm from './LoginForm.vue'
 </script>
 
 <template>
-  <div class="grid md:grid-cols-2 itens-center h-screen bg-white">
+  <div class="grid md:grid-cols-2 itens-center sm:h-screen bg-white">
     <div class="h-full flex justify-end bg-white md:drop-shadow-2xl">
       <div class="md:px-10 h-full flex items-center justify-center w-full md:max-w-[600px]">
         <LoginCover />
