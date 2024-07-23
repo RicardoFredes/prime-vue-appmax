@@ -136,8 +136,7 @@ export class AuthService {
   }
 
   isAuthenticated() {
-    return true
-    // return !!this.accessToken
+    return !!this.accessToken
   }
 
   getAccessToken() {
