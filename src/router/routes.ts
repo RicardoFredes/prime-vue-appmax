@@ -1,16 +1,17 @@
 import type { RouteRecordRaw } from 'vue-router'
 import { authRoutes } from '@/modules/auth/routes'
 import { withdrawRoutes } from '@/modules/withdraw/routes'
-import MainLayout from '@/layouts/MainLayout.vue'
+import MainCardLayout from '@/layouts/MainCardLayout.vue'
 import { authGuard } from './AuthGuard'
 import { dashboardRoutes } from '@/modules/dashboard/routes'
 
 const routes: RouteRecordRaw[] = [
   ...authRoutes,
+  ...dashboardRoutes,
   {
     path: '/',
-    component: MainLayout,
-    children: [...dashboardRoutes, ...withdrawRoutes]
+    component: MainCardLayout,
+    children: [...withdrawRoutes]
   }
 ]
 
