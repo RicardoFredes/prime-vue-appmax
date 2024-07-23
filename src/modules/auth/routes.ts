@@ -2,7 +2,7 @@ import LoginView from './login/LoginView.vue'
 
 export const authRoutes = [
   {
-    path: '/',
+    path: '/entrar',
     name: 'login',
     component: LoginView
   }

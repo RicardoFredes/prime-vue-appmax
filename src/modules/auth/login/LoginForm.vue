@@ -4,6 +4,10 @@ import { RouterLink, useRouter } from 'vue-router'
 import AmIcon from '@/components/AmIcon.vue'
 import Button from 'primevue/button'
 import InputText from 'primevue/inputtext'
+import AuthService from '@/services/AuthService'
+import { useToast } from 'primevue/usetoast'
+
+const toast = useToast()
 
 const FAKER_ROUTE_LINK = '/withdraw/bank-accounts'
 
@@ -42,11 +46,20 @@ const isValid = computed(() => {
 const login = async () => {
   formTouched.value = true
   if (!isValid.value) return
-  isSubmitting.value = true
-  await new Promise((resolve) => setTimeout(resolve, 2000))
-  isSubmitting.value = false
-  alert('Login efetuado com sucesso')
-  router.push(FAKER_ROUTE_LINK)
+  try {
+    isSubmitting.value = true
+    await AuthService.login(username.value, password.value)
+    router.push({ name: 'dashboard' })
+  } catch (error) {
+    toast.add({
+      severity: 'error',
+      summary: 'Não foi possível prosseguir',
+      detail: 'Verifique se o e-mail e a senha estão corretos',
+      life: 5000
+    })
+  } finally {
+    isSubmitting.value = false
+  }
 }
 
 const togglePasswordVisibility = () => {
