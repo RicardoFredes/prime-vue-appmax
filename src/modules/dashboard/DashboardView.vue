@@ -66,13 +66,13 @@ const chartData = computed(() => {
 <template>
   <h1 class="text-2xl lg:text-3xl font-medium">Bem-vindo(a)</h1>
   <h2 class="text-gray-700">Resumos das vendas</h2>
-  <main class="grid lg:grid-cols-6 mt-4 gap-4">
-    <AmCard class="col-span-2 space-y-4">
+  <main class="grid md:grid-cols-6 mt-4 gap-4">
+    <AmCard class="md:col-span-2 space-y-4">
       <h3 class="font-medium">Disponível para Antecipar Hoje</h3>
       <p class="text-2xl font-medium">R$ 9.00,14</p>
       <Button size="small">Antecipar</Button>
     </AmCard>
-    <AmCard class="col-span-2 space-y-6">
+    <AmCard class="md:col-span-2 space-y-6">
       <h3 class="font-medium">Formas de pagamento</h3>
       <ul class="space-y-3 text-xs">
         <li class="flex items-center">
@@ -92,7 +92,7 @@ const chartData = computed(() => {
         </li>
       </ul>
     </AmCard>
-    <AmCard class="col-span-2 space-y-6">
+    <AmCard class="md:col-span-2 space-y-6">
       <h3 class="font-medium">Reembolsos</h3>
       <ul class="space-y-3 text-xs">
         <li class="flex items-center">
@@ -112,12 +112,12 @@ const chartData = computed(() => {
         </li>
       </ul>
     </AmCard>
-    <AmCard class="col-span-2 space-y-4">
+    <AmCard class="md:col-span-2 space-y-4">
       <h3 class="font-medium">Total de vendas</h3>
       <p class="text-2xl font-medium">R$ 0,00</p>
       <p class="text-gray-800 text-xs">Número de vendas: 0</p>
     </AmCard>
-    <AmCard class="col-span-2 space-y-6">
+    <AmCard class="md:col-span-2 space-y-6">
       <h3 class="font-medium">Taxa de Aprovação</h3>
       <div class="flex gap-2 justify-between">
         <div class="flex items-center flex-col">
@@ -134,7 +134,7 @@ const chartData = computed(() => {
         </div>
       </div>
     </AmCard>
-    <AmCard class="col-span-2">
+    <AmCard class="md:col-span-2">
       <h3 class="font-medium mb-4">Recuperação com IA</h3>
       <p class="text-2xl font-medium">
         R$ 0,00 <AmIcon name="trending_up" size="xl" class="text-primary-500" />
@@ -148,10 +148,16 @@ const chartData = computed(() => {
         </div>
       </div>
     </AmCard>
-    <AmCard class="col-span-6 space-y-6">
-      <h3 class="font-medium">Gráfico de Receita</h3>
-      <p class="text-gray-800 text-xs">Últimos 7 dias</p>
-      <Chart type="bar" :data="chartData" :options="chartOptions" class="h-60" />
+    <AmCard class="md:col-span-6 space-y-6 px-0 overflow-x-hidden">
+      <div class="px-6 space-y-6">
+        <h3 class="font-medium">Gráfico de Receita</h3>
+        <p class="text-gray-800 text-xs">Últimos 7 dias</p>
+      </div>
+      <div class="overflow-auto">
+        <div class="px-6 min-w-[500px]">
+          <Chart type="bar" :data="chartData" :options="chartOptions" class="h-60" />
+        </div>
+      </div>
     </AmCard>
   </main>
 </template>
