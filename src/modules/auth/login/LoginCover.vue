@@ -24,7 +24,7 @@ const BLANK_IMG_SOURCE = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAAC
         media="(min-width: 768px)"
         height="326"
         width="280"
-        srcset="/img/auth-bg-element.svg"
+        srcset="@/assets/auth-bg-element.svg"
       />
       <img :src="BLANK_IMG_SOURCE" height="0" width="0" />
     </picture>
