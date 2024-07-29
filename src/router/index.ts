@@ -1,8 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import routes from './routes'
 
-const history = createWebHistory(import.meta.env.BASE_URL)
+const basename = 'v3'
+const base = import.meta.env.BASE_URL + basename + '/'
 
-const router = createRouter({ history, routes })
+const history = createWebHistory(base)
+
+const router = createRouter({ history, routes, scrollBehavior: () => ({ left: 0, top: 0 }) })
 
 export default router
